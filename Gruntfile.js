@@ -57,7 +57,7 @@ module.exports = function (grunt) {
          * This task handles compiling all of the necessary CoffeeScript files for your application into a single
          * JavaScript file, that will subsequently be packaged for use.
          *
-         * The only convention you must absolutely follow is that 'boot.coffee' must be the first file compiled, and
+         * The only convention you must absolutely follow is that 'init.coffee' must be the first file compiled, and
          * 'app.coffee' must be the last.
          *
          * Due to the way CoffeeScript creates closures, the order files are concatenated together can introduce errors
@@ -76,8 +76,8 @@ module.exports = function (grunt) {
                         'app/specs/**/*-spec.coffee'
                     ],
                     'build/application.js': [
-                        // The boot file needs to come first.
-                        'app/config/boot.coffee',
+                        // The initialization script needs to come first.
+                        'app/config/init.coffee',
 
                         // Plugins
                         'app/plugins/*.coffee',
